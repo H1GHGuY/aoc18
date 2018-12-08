@@ -1,0 +1,27 @@
+(executable
+  (name "One")
+  (ocamlopt_flags -O3)
+  (modules One)
+  (libraries batteries)
+  )
+
+(executable
+  (name "OneTwo")
+  (ocamlopt_flags -O3)
+  (modules OneTwo)
+  (libraries batteries)
+  )
+
+(executable
+  (name "Two")
+  (ocamlopt_flags -O3)
+  (modules Two)
+  (libraries batteries)
+  )
+
+(executable
+  (name "TwoTwo")
+  (ocamlopt_flags -O3)
+  (modules TwoTwo)
+  (libraries batteries)
+  )
