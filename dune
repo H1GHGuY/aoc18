@@ -25,3 +25,26 @@
   (modules TwoTwo)
   (libraries batteries)
   )
+
+(executable
+  (name "Three")
+  (ocamlopt_flags -O3)
+  (modules Three)
+  (libraries batteries)
+  )
+
+(executable
+  (name "ThreeTwo")
+  (ocamlopt_flags -O3)
+  (modules ThreeTwo)
+  (libraries batteries)
+  )
+
+(executable
+  (name "Nine")
+  (ocamlopt_flags -O3)
+  (modules Nine)
+  (libraries batteries)
+  )
+
+
