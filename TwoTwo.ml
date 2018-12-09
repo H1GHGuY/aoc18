@@ -1,22 +1,29 @@
 exception Found of string * string
 
+let try_edit_distance element others =
+        BatList.iter (fun other ->
+          match BatString.edit_distance element other with
+            | 1 ->
+              raise (Found (element, other))
+            | _ ->
+              ()
+          )
+          others
+
+let rec find lst =
+  match lst with
+  | [] | [_] -> raise Not_found
+  | hd::tl ->
+    let () = try_edit_distance hd tl in
+    find tl
+
 let main () =
   let strings =
     BatIO.lines_of BatIO.stdin
     |> BatList.of_enum
   in
   try
-    BatList.iter (fun str1 ->
-        BatList.iter (fun str2 ->
-          match BatString.edit_distance str1 str2 with
-            | 1 ->
-              raise (Found (str1, str2))
-            | _ ->
-              ()
-          )
-          strings
-      )
-      strings
+    find strings
   with
   | Found (str1, str2) ->
     BatEnum.combine ((BatString.enum str1), (BatString.enum str2))
