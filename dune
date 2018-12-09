@@ -47,6 +47,22 @@
   (libraries batteries AOCUtils)
   )
 
+
+(executable
+  (name "Four")
+  (ocamlopt_flags -O3)
+  (modules Four)
+  (libraries batteries AOCUtils)
+  )
+
+(executable
+  (name "FourTwo")
+  (ocamlopt_flags -O3)
+  (modules FourTwo)
+  (libraries batteries AOCUtils)
+  )
+
+
 (executable
   (name "Nine")
   (ocamlopt_flags -O3)

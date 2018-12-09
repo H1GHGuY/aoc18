@@ -1,6 +1,6 @@
 #! /bin/bash
 
-TARGETS="One OneTwo Two TwoTwo Three ThreeTwo Nine NineTwo"
+TARGETS="One OneTwo Two TwoTwo Three ThreeTwo Four FourTwo Nine NineTwo"
 P=_build/default/
 
 for target in $TARGETS
@@ -20,6 +20,10 @@ echo -e "\n3"
 ./$P/Three.exe < input_3.txt
 echo -e "\n3-2"
 ./$P/ThreeTwo.exe < input_3.txt
+echo -e "\n4"
+./$P/Four.exe < input_4.txt
+echo -e "\n4-2"
+./$P/FourTwo.exe < input_4.txt
 echo -e "\n9"
 ./$P/Nine.exe
 echo -e "\n9-2"
