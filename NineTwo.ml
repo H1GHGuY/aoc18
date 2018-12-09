@@ -97,4 +97,4 @@ let main multiply =
   BatIO.nwrite BatIO.stdout (string_of_int winning_score)
 
 
-let () = AOCUtils.Time.time (fun () -> main 1)
+let () = AOCUtils.Time.time (fun () -> main 100)

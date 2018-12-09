@@ -1,50 +1,63 @@
+(library
+  (name AOCUtils)
+  (ocamlopt_flags -O3)
+  (modules Time)
+  (libraries batteries)
+  )
+
 (executable
   (name "One")
   (ocamlopt_flags -O3)
   (modules One)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "OneTwo")
   (ocamlopt_flags -O3)
   (modules OneTwo)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "Two")
   (ocamlopt_flags -O3)
   (modules Two)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "TwoTwo")
   (ocamlopt_flags -O3)
   (modules TwoTwo)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "Three")
   (ocamlopt_flags -O3)
   (modules Three)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "ThreeTwo")
   (ocamlopt_flags -O3)
   (modules ThreeTwo)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
 (executable
   (name "Nine")
   (ocamlopt_flags -O3)
   (modules Nine)
-  (libraries batteries)
+  (libraries batteries AOCUtils)
   )
 
+(executable
+  (name "NineTwo")
+  (ocamlopt_flags -O3)
+  (modules NineTwo)
+  (libraries batteries AOCUtils)
+  )
 

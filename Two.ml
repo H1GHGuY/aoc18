@@ -34,4 +34,4 @@ let main () =
   |> (fun (doubles, triples, _) -> string_of_int @@ doubles * triples)
   |> BatIO.nwrite BatIO.stdout
 
-let _ = main ()
+let _ = AOCUtils.Time.time main

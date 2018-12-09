@@ -21,4 +21,4 @@ let main () =
   | Completed x ->
     BatIO.nwrite BatIO.stdout (string_of_int x)
 
-let _ = main ()
+let _ = AOCUtils.Time.time main

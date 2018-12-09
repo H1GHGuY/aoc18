@@ -37,4 +37,4 @@ let main () =
   |> string_of_int
   |> BatIO.nwrite BatIO.stdout
 
-let _ = main ()
+let _ = AOCUtils.Time.time main

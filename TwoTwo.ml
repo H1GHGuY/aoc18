@@ -30,7 +30,7 @@ let main () =
     |> BatString.of_enum
     |> BatIO.nwrite BatIO.stdout
 
-let _ = main ()
+let _ = AOCUtils.Time.time main
 
 
 
