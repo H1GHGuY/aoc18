@@ -9,8 +9,8 @@ let claim (no_overlap, matrix) (id, left, top, width, height) =
     if end_column = column then
       (no_overlap, matrix, overlapped)
     else
-      let v = Matrix.get matrix row column in
-      let () = Matrix.set matrix row column id in
+      let v = Matrix.unsafe_get matrix row column in
+      let () = Matrix.unsafe_set matrix row column id in
       let next =
         if v <> 0 then
           (BatSet.remove v no_overlap,
@@ -44,15 +44,16 @@ let no_overlap (set, _fabric) =
   fst @@ BatSet.pop_min set
 
 let parse line =
+  let convert str = int_of_string @@ BatString.trim str in
   let (id, claim ) = BatString.split line ~by:"@" in
   let (offset, area) = BatString.split claim ~by:":" in
   let (left, top) = BatString.split offset ~by:"," in
   let (width, height) = BatString.split area ~by:"x" in
-  (int_of_string @@ BatString.trim @@ BatString.tail id 1,
-   int_of_string @@ BatString.trim left,
-   int_of_string @@ BatString.trim top,
-   int_of_string @@ BatString.trim width,
-   int_of_string @@ BatString.trim height)
+  (convert @@ BatString.tail id 1,
+   convert left,
+   convert top,
+   convert width,
+   convert height)
 
 let main () =
   let fabric = Matrix.create BatBigarray.Int BatBigarray.c_layout 1000 1000 in
