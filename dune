@@ -62,6 +62,19 @@
   (libraries batteries AOCUtils)
   )
 
+(executable
+  (name "Five")
+  (ocamlopt_flags -O3)
+  (modules Five)
+  (libraries batteries AOCUtils)
+  )
+
+(executable
+  (name "FiveTwo")
+  (ocamlopt_flags -O3)
+  (modules FiveTwo)
+  (libraries batteries AOCUtils)
+  )
 
 (executable
   (name "Nine")
