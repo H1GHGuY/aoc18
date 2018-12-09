@@ -1,14 +1,11 @@
 exception Found of string * string
 
 let try_edit_distance element others =
-        BatList.iter (fun other ->
-          match BatString.edit_distance element other with
-            | 1 ->
-              raise (Found (element, other))
-            | _ ->
-              ()
-          )
-          others
+  BatList.iter (fun other ->
+      if (BatString.edit_distance element other ) = 1 then
+        raise (Found (element, other))
+    )
+    others
 
 let rec find lst =
   match lst with
